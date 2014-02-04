@@ -1,0 +1,10 @@
+SPort  KEYWORD1
+
+begin KEYWORD2
+process KEYWORD2
+getVarioSpeed  KEYWORD2
+getVarioAltitude  KEYWORD2
+getFailsafeStatus KEYWORD2
+getVfasVoltage  KEYWORD2
+getVfasCurrent KEYWORD2
+getVfasConsumption KEYWORD2
