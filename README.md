@@ -8,7 +8,9 @@ I used the following sources of info to write it:
 
 Basic Installation
 ------------------
-> $ cd <arduino-sketchbook>/libraries
-> $ git clone https://github.com/zendes/SPort.git
+```
+$ cd <arduino-sketchbook>/libraries
+$ git clone https://github.com/zendes/SPort.git
+```
 
 Then restart your Arduino IDE and take a look at the examples
