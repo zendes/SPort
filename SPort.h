@@ -47,12 +47,11 @@
 #define CELLS_FIRST_ID     0x0300
 #define CELLS_LAST_ID      0x030f
 
-#define SPORT_DATA_U8(packet)   (packet[4])
-#define SPORT_DATA_S32(packet)  (*((int32_t *)(packet+4)))
-#define SPORT_DATA_U32(packet)  (*((uint32_t *)(packet+4)))
+#define SPORT_DATA_U8(packet)   (buffer[4])
+#define SPORT_DATA_S32(packet)  (*((int32_t *)(buffer+4)))
+#define SPORT_DATA_U32(packet)  (*((uint32_t *)(buffer+4)))
 
-class SPort
-{
+class SPort {
   public:
     SPort(HardwareSerial & serial) : _serial (serial) {}
     void begin();
@@ -60,19 +59,18 @@ class SPort
     void process();
     long getVarioSpeed();
     long getVarioAltitude();
-    long getVfasVoltage();
-    long getVfasCurrent();
-    long getVfasConsumption();
+    int  getVfasVoltage();
+    int  getVfasCurrent();
+    int  getVfasConsumption();
   private:
     HardwareSerial & _serial;
-    bool checkSportPacket(byte *packet);
-    void processSportPacket(byte *packet);
-    long altitude(long altiData);
-    long _varioSpeed;
-    long _varioAltitude;
-    long _vfasVoltage;
-    long _vfasCurrent;
-    long _vfasConsumption;
+    long          _varioSpeed;
+    long          _varioAltitude;
+    unsigned long _altitudeOffset;
+    int           _vfasVoltage;
+    int           _vfasCurrent;
+    unsigned long _vfasConsumption;
+    unsigned long _uptime;
 };
 
 #endif
